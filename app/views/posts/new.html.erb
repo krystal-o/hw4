@@ -5,14 +5,22 @@
     <%= form.label "title" %>
     <%= form.text_field "title" %>
   </p>
-  <p>
-    <%= form.label "description" %>
-    <%= form.text_field "description" %>
-  </p>
+  
   <p>
     <%= form.label "posted_on" %>
     <%= form.date_field "posted_on" %>
   </p>
+  
+  <p>
+    <%= form.label "image" %>
+    <%= form.text_field "image" %>
+  </p>
+  
+  <p>
+    <%= form.label "description" %>
+    <%= form.text_area "description",size:"60x10" %>
+  </p>
+
   <p>
     <%= form.submit %>
   </p>
