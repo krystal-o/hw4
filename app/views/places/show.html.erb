@@ -1,7 +1,16 @@
 <% if @current_user %>
   <h1><%= @place["name"] %></h1>
 
-  <h2>My Posts</h2>
+  <!--<h2>My Posts</h2>-->
+
+    <p>
+    <a class="btn btn-secondary" href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
+    </p>
+    <p>
+     <a href="/places">Back to All Places</a>
+    </p>
+
+
   <% for post in @posts %>
     <h3><%= post["title"] %></h3>
     <h4><%= post["posted_on"] %></h4>
@@ -9,13 +18,10 @@
     <p><%= post["description"] %></p>
   <% end %>
 
-  <p>
-    <a href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
-  </p>
 
-  <p>
-    <a href="/places">Back to All Places</a>
-  </p>
+
+
 <% else %>
   You must first <a href="/login">login</a> to see more about these places.
 <% end %>
+
