@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         session["user_id"] = @user["id"]        
         
         # login the user
-        flash["notice"] = "You've logged in."
+        flash["notice"] = "You've logged in.  |  "
         redirect_to "/places"
       else
         flash["notice"] = "Unsuccessful login."
