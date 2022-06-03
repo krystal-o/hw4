@@ -18,7 +18,10 @@
       <div class="col-md-4 col-sm-6">  <!-- I'm using the grid system here but also have these column sizes built in. Do I need this?-->
         <h3><%= post["title"] %></h3>
         <h4><%= post["posted_on"] %></h4>
-        <img class="img-fluid" src="<%= post["image"] %>" class="w-full">
+        <% if post.uploaded_image.attached? %>
+          <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
+        
+        <% end %>
         <p><%= post["description"] %></p>
       </div>
     <% end %>
